@@ -19,4 +19,18 @@ Number.prototype.isPrime = function(n) {
 // You can eliminate a lot of computation just by checking if the number is divisible by two
 // as all even numbers satisfy this test. 
 
+Number.prototype.isPrimeRedux = function(n) {
+	if (n <= 1) return false;
+	const sqrtLimit = Math.floor(Math.sqrt(n));
+	for (var i = 2; i < sqrtLimit; i++) {
+		
+		if (n%i === 0) return false; 
+	}
+	return true;
+}
+
+// This is a simpler test using Math.floor() and Math.sqrt() which should be slightly easier to read.
+// It seems to work pretty consistently based on limited testing. TODO Start writing Unit Tests for these.
+// 
+
 
